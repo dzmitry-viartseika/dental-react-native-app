@@ -1,19 +1,19 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
 
 const PatientList = ({title, items}) => {
 
     return (
       <Group>
         <GroupTitle>{title}</GroupTitle>
-        {items.map((item, index) => (
-                  <GroupItem key={item.id}>
-                      <Avatar source={{uri: item.userInfo.avatar}}/>
-                      <UserInfo>
-                          <FullName>{item.userInfo.fullName}</FullName>
-                          <ReasonText>{item.visitReason}</ReasonText>
-                      </UserInfo>
-                      <TimeGroup active={item.active}>{item.timeVisit}</TimeGroup>
-                  </GroupItem>
+        {items.map((item) => (
+        <GroupItem key={item.id}>
+            <Avatar source={{uri: item.userInfo.avatar}}/>
+            <UserInfo>
+                <FullName>{item.userInfo.fullName}</FullName>
+                <ReasonText>{item.visitReason}</ReasonText>
+            </UserInfo>
+            <TimeGroup active={item.active}>{item.timeVisit}</TimeGroup>
+        </GroupItem>
         ))}
         </Group>
     )
@@ -69,7 +69,5 @@ const Avatar = styled.Image`
     width: 40px;
     height: 40px;
 `
-
-
 
 export default PatientList;
