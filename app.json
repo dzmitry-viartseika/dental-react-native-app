@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "05064fd7-c5f6-4340-b428-1edd30411137"
+      }
+    },
+    "owner": "viartseika"
   }
 }
