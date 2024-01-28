@@ -1,16 +1,30 @@
 import styled from 'styled-components/native';
-import { PatientList } from './components/Patient';
 import { patients } from './constants/patients';
+import PatientItem from './components/Patient/PatientItem';
+import SectionTitle from './components/Patient/SectionTitle';
 import { React } from 'react';
+import {
+  SectionList,
+  SafeAreaView,
+  Text,
+} from 'react-native';
 
 const App = () => {
 
   return (
     <Container>
-      <ScrollViewLayout>
-        <PatientList title="16th of September" items={patients} />
-        <PatientList title="17th of September" items={patients} />
-      </ScrollViewLayout>
+      <SafeAreaView>
+           <SectionList
+              sections={patients}
+              keyExtractor={(item, index) => item + index}
+              renderItem={({item}) => (
+                       <PatientItem item={item} />
+              )}
+              renderSectionHeader={({section: {title}}) => (
+                <SectionTitle title={title} />
+              )}
+            />
+      </SafeAreaView>
     </Container>
   );
 };
@@ -24,4 +38,9 @@ const ScrollViewLayout = styled.ScrollView`
   marginhorizontal: 20;
 `;
 
+const Group = styled.View`
+  padding: 20px;
+`;
+
+App.displayName = 'App';
 export default App;

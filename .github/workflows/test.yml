@@ -1,0 +1,43 @@
+name: Tests (jest)
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    name: Tests (jest)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📦 Checkout project repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          #        node-version: ${{ matrix.node-version }}
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+      - name: 🏃‍♂️ Run Tests
+        run: npm run test
+
+      - name: Jest Coverage Comment
+        uses: MishaKav/jest-coverage-comment@main
+        if: (success() || failure()) && github.event_name == 'pull_request'
+        with:
+          coverage-summary-path: ./coverage/coverage-summary.json
+          summary-title: "💯 Test Coverage"
+          badge-title: Coverage
+          create-new-comment: false
+          junitxml-title: 😎 Tests Results
+          junitxml-path: ./coverage/jest-junit.xml
+          coverage-title: 👀 Tests Details
+          coverage-path: ./coverage/coverage.txt
+          report-only-changed-files: true

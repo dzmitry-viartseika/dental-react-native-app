@@ -1,10 +1,8 @@
-import styled from 'styled-components/native';
 import { React } from 'react';
+import styled from 'styled-components/native';
 
-const PatientList = ({ items }) => {
-  return (
-    <Group>
-      {items.map((item) => (
+const PatientItem = ({ item }) => {
+    return (
         <GroupItem key={item.id}>
           <Avatar source={{ uri: item.userInfo.avatar }} />
           <UserInfo>
@@ -13,14 +11,8 @@ const PatientList = ({ items }) => {
           </UserInfo>
           <TimeGroup active={item.active}>{item.timeVisit}</TimeGroup>
         </GroupItem>
-      ))}
-    </Group>
-  );
-};
-
-const Group = styled.View`
-  padding: 20px;
-`;
+    )
+}
 
 const FullName = styled.Text`
   font-weight: 400;
@@ -62,4 +54,5 @@ const Avatar = styled.Image`
   height: 40px;
 `;
 
-export default PatientList;
+PatientItem.displayName = 'PatientItem';
+export default PatientItem;
