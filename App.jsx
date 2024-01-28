@@ -1,51 +1,41 @@
 import styled from 'styled-components/native';
-import { patients } from './constants/patients';
-import PatientItem from './components/Patient/PatientItem';
-import SectionTitle from './components/Patient/SectionTitle';
-import { Ionicons } from '@expo/vector-icons';
 import { React } from 'react';
-import { SectionList, SafeAreaView } from 'react-native';
+import { PatientScreen, HomeScreen } from './screens';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <Container>
-      <SafeAreaView>
-        <SectionList
-                  sections={patients}
-                  keyExtractor={(item, index) => item + index}
-                  renderItem={({ item }) => <MainSection><PatientItem item={item} /></MainSection> }
-                  renderSectionHeader={({ section: { title } }) => (
-                    <MainSection><SectionTitle title={title} /></MainSection>
-                  )}
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            title: 'Пациенты',
+            headerTintColor: '#2A86FF',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
         />
-      </SafeAreaView>
-      <PlusButton>
-        <Ionicons name="add-outline" size={18} color="white" />
-      </PlusButton>
-    </Container>
+        <Stack.Screen
+          name="Patient"
+          component={PatientScreen}
+          options={{
+            title: 'Карта пациента',
+            headerTintColor: '#2A86FF',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
-const Container = styled.View`
-  flex: 1;
-  margin-top: 50px;
-`;
-
-const MainSection = styled.View`
-    padding: 10px;
-`
-
-const PlusButton = styled.TouchableOpacity`
-    border-radius: 50px;
-    width: 64px;
-    height: 64px;
-    background: #2A86FF;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 25px;
-    right: 15px;
-`
 
 App.displayName = 'App';
 export default App;
