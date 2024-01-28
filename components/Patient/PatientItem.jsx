@@ -2,17 +2,17 @@ import { React } from 'react';
 import styled from 'styled-components/native';
 
 const PatientItem = ({ item }) => {
-    return (
-        <GroupItem key={item.id}>
-          <Avatar source={{ uri: item.userInfo.avatar }} />
-          <UserInfo>
-            <FullName>{item.userInfo.fullName}</FullName>
-            <ReasonText>{item.visitReason}</ReasonText>
-          </UserInfo>
-          <TimeGroup active={item.active}>{item.timeVisit}</TimeGroup>
-        </GroupItem>
-    )
-}
+  return (
+    <GroupItem key={item.id}>
+      <Avatar source={{ uri: item.userInfo.avatar }} />
+      <UserInfo>
+        <FullName>{item.userInfo.fullName}</FullName>
+        <ReasonText>{item.visitReason}</ReasonText>
+      </UserInfo>
+      <TimeGroup active={item.active}>{item.timeVisit}</TimeGroup>
+    </GroupItem>
+  );
+};
 
 const FullName = styled.Text`
   font-weight: 400;
