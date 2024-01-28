@@ -4,6 +4,7 @@ import { patients } from './constants/patients';
 import { React } from 'react';
 
 const App = () => {
+
   return (
     <Container>
       <ScrollViewLayout>
