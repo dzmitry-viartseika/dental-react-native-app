@@ -2,9 +2,9 @@ import { React } from 'react';
 import styled from 'styled-components/native';
 
 const PatientItem = ({ item, navigation }) => {
-const handlePress = () => {
+  const handlePress = () => {
     navigation.navigate('Patient', {
-       patient: item,
+      patient: item,
     });
   };
 

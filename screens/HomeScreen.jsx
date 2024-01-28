@@ -4,19 +4,25 @@ import PatientItem from '../components/Patient/PatientItem';
 import SectionTitle from '../components/Patient/SectionTitle';
 import { Ionicons } from '@expo/vector-icons';
 import { React } from 'react';
-import { SectionList, SafeAreaView, Button, Text } from 'react-native';
+import { SectionList, SafeAreaView } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   return (
     <Container>
       <SafeAreaView>
         <SectionList
-            sections={patients}
-            keyExtractor={(item, index) => item + index}
-            renderItem={({ item }) => <MainSection><PatientItem item={item} navigation={navigation} /></MainSection> }
-            renderSectionHeader={({ section: { title } }) => (
-              <MainSection><SectionTitle title={title} /></MainSection>
-            )}
+          sections={patients}
+          keyExtractor={(item, index) => item + index}
+          renderItem={({ item }) => (
+            <MainSection>
+              <PatientItem item={item} navigation={navigation} />
+            </MainSection>
+          )}
+          renderSectionHeader={({ section: { title } }) => (
+            <MainSection>
+              <SectionTitle title={title} />
+            </MainSection>
+          )}
         />
       </SafeAreaView>
       <PlusButton>
@@ -32,20 +38,20 @@ const Container = styled.View`
 `;
 
 const MainSection = styled.View`
-    padding: 10px;
-`
+  padding: 10px;
+`;
 
 const PlusButton = styled.TouchableOpacity`
-    border-radius: 50px;
-    width: 64px;
-    height: 64px;
-    background: #2A86FF;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 25px;
-    right: 15px;
-`
+  border-radius: 50px;
+  width: 64px;
+  height: 64px;
+  background: #2a86ff;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 25px;
+  right: 15px;
+`;
 
 HomeScreen.displayName = 'HomeScreen';
 export default HomeScreen;
