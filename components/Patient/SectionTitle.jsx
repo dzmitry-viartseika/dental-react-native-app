@@ -3,6 +3,7 @@ import {
 } from 'react-native';
 import styled from 'styled-components/native';
 import { React } from 'react';
+import PropTypes from 'prop-types';
 
 const SectionTitle = ({ title }) => {
     return (
@@ -17,4 +18,5 @@ const SectionMainTitle = styled.Text`
 `
 
 SectionTitle.displayName = 'SectionTitle';
+SectionTitle.propTypes = {title: PropTypes.string.isRequired};
 export default SectionTitle;
