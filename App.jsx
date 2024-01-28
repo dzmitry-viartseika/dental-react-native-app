@@ -1,4 +1,3 @@
-import styled from 'styled-components/native';
 import { React } from 'react';
 import { PatientScreen, HomeScreen } from './screens';
 import { NavigationContainer } from '@react-navigation/native';
