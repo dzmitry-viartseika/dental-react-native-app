@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
-import { React, useEffect } from 'react';
+import { React } from 'react';
 
 const PatientList = ({ items }) => {
-const test = '1000'
   return (
     <Group>
       {items.map((item) => (
