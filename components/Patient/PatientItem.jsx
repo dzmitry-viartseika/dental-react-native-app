@@ -1,9 +1,15 @@
 import { React } from 'react';
 import styled from 'styled-components/native';
 
-const PatientItem = ({ item }) => {
+const PatientItem = ({ item, navigation }) => {
+const handlePress = () => {
+    navigation.navigate('Patient', {
+       patient: item,
+    });
+  };
+
   return (
-    <GroupItem key={item.id}>
+    <GroupItem key={item.id} onPress={handlePress}>
       <Avatar source={{ uri: item.userInfo.avatar }} />
       <UserInfo>
         <FullName>{item.userInfo.fullName}</FullName>
