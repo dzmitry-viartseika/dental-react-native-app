@@ -11,7 +11,7 @@ const PatientScreen = ({ route }) => {
 
   return (
     <Container>
-      <Text>{patient.userInfo.fullName}</Text>
+      <PatientFullName>{patient.userInfo.fullName}</PatientFullName>
       <PhoneNumber>{patient.userInfo.phoneNumber}</PhoneNumber>
       <Button
         onPress={onPressLearnMore}
@@ -26,6 +26,12 @@ const PatientScreen = ({ route }) => {
 const Container = styled.View`
   flex: 1;
   margin-top: 50px;
+`;
+
+const PatientFullName = styled.View`
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 30px;
 `;
 
 const PhoneNumber = styled.Text`
