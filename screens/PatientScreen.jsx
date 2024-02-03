@@ -26,7 +26,7 @@ const PatientScreen = ({ route }) => {
 const Container = styled.View`
   flex: 1;
   margin-top: 50px;
-  pading: 0 10px;
+  padding: 0 20px;
 `;
 
 const PatientFullName = styled.Text`
