@@ -28,7 +28,7 @@ const Container = styled.View`
   margin-top: 50px;
 `;
 
-const PatientFullName = styled.View`
+const PatientFullName = styled.Text`
     font-weight: 800;
     font-size: 28px;
     line-height: 30px;
