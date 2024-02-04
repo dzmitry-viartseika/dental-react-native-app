@@ -5,10 +5,10 @@ import SectionTitle from '../SectionTitle';
 const mockTitle = 'Mocked title';
 
 describe('<SectionTitle /> component', () => {
-  it('should be rendered with current title', () => {
-    render(<SectionTitle title={mockTitle} />);
+	it('should be rendered with current title', () => {
+		render(<SectionTitle title={mockTitle} />);
 
-    const titleElement = screen.getByText(mockTitle);
-    expect(titleElement).toBeTruthy();
-  });
+		const titleElement = screen.getByText(mockTitle);
+		expect(titleElement).toBeTruthy();
+	});
 });
