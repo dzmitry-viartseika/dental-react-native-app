@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react-native';
-import { IconButton } from '../IconButton';
+// import { IconButton } from '../IconButton';
 
 const STUB_COLOR = 'black';
 const STUB_ICON_NAME = 'call';
