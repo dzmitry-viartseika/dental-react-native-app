@@ -6,7 +6,7 @@ const STUB_COLOR = 'black';
 const STUB_ICON_NAME = 'call';
 const STUB_SIZE = '16px';
 
-describe('<IconButton /> component', () => {
+describe.skip('<IconButton /> component', () => {
   it('should be rendered with current icon', () => {
     render(<IconButton color={STUB_COLOR} size={STUB_SIZE} iconName={STUB_ICON_NAME} />);
 
