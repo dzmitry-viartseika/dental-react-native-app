@@ -16,7 +16,7 @@ const CustomIconButton = styled.TouchableOpacity`
 	justify-content: center;
 	align-items: center;
 	border-radius: 30px;
-	background: #2a86ff;
+	background: green;
 	height: 45px;
 `;
 
