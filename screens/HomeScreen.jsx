@@ -5,6 +5,7 @@ import SectionTitle from '../components/Patient/SectionTitle';
 import { Ionicons } from '@expo/vector-icons';
 import { React } from 'react';
 import { SectionList, SafeAreaView } from 'react-native';
+import IconButton from '../components/ui/Buttons/IconButton'
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -26,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
         />
       </SafeAreaView>
       <PlusButton>
-        <Ionicons name="add-outline" size={18} color="white" />
+        <IconButton iconName="add-outline" size={18} color="white" />
       </PlusButton>
     </Container>
   );

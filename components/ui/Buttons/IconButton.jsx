@@ -4,12 +4,11 @@ import { Button, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { Ionicons } from '@expo/vector-icons';
 
-const IconButton = () => {
-
+const IconButton = ({ iconName, size = 18, color }) => {
 
   return (
     <CustomIconButton>
-<Ionicons name="add-outline" size={18} color="white" />
+        <Ionicons name={iconName} size={size} color={color} />
       </CustomIconButton>
   );
 };
@@ -24,5 +23,5 @@ const CustomIconButton = styled.TouchableOpacity`
 `
 
 IconButton.displayName = 'IconButton';
-IconButton.propTypes = { title: PropTypes.string.isRequired, color: PropTypes.string.isRequired, onPressEventHandler: PropTypes.func, accessibilityLabel: PropTypes.string.isRequired };
+IconButton.propTypes = { iconName: PropTypes.string.isRequired, size: PropTypes.string.isRequired, color: PropTypes.string.isRequired };
 export default IconButton;

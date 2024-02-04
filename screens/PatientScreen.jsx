@@ -20,7 +20,7 @@ const PatientScreen = ({ route }) => {
             <ButtonComponent onPressEventHandler={onPressLearnMore} title="Формула зубов" color="#4294ff" accessibilityLabel="Learn more about this purple button"/>
         </Test>
         <Test2>
-            <IconButton />
+        <IconButton iconName="call" size={18} color="white" />
         </Test2>
       </ActionWrapper>
     </Container>
@@ -41,12 +41,13 @@ const ActionWrapper = styled.View`
 
 const Test = styled.View`
     display: flex;
-    width: 80%;
+    width: 85%;
+    margin-right: 10px;
 `;
 
 const Test2 = styled.View`
     display: flex;
-    width: 20%;
+    width: 15%;
 `;
 
 const PatientFullName = styled.Text`

@@ -11,7 +11,8 @@
     "prettier": "prettier --list-different '**/*.{js,jsx}'",
     "lint": "prettier --list-different '**/*.{js,jsx}' && eslint '**/*.{js,jsx}' --max-warnings 0 && flow",
     "lint:fix": "prettier --write '**/*.{js,jsx}' && eslint --fix '**/*.{js,jsx}'",
-    "test": "jest"
+    "test": "jest",
+    "testDebug": "jest -o --watch --coverage=false"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.1.1",
@@ -43,10 +44,13 @@
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "fbjs-scripts": "^3.0.1",
     "flow-bin": "^0.228.0",
     "jest": "^29.7.0",
     "jest-expo": "~27.0.0",
-    "prettier": "^3.2.4"
+    "prettier": "^3.2.4",
+    "husky": "^6.0.0",
+    "release-it": "^14.2.2"
   },
   "private": true
 }
